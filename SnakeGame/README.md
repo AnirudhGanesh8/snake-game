@@ -213,10 +213,12 @@ If you encounter any issues or have questions:
 
 1. **Check the issues** on GitHub
 2. **Create a new issue** with detailed information
-3. **Contact** via [your-email@example.com]
+3. **Contact** via [anirudhganesh@gmail.com]
 
 ---
 
 **Made with ❤️ and vanilla JavaScript**
 
 ⭐ **Star this repository** if you found it helpful!
+
+
