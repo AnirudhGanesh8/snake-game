@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>🐍 Snake Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="theme-color" content="#1a472a">
+    <meta name="description" content="A responsive Snake Game with touch controls and accessibility features">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1><i class="fas fa-snake" aria-hidden="true"></i> 🐍 Snake Game 🐍</h1>
+            <div class="header-controls">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+                <button id="settingsBtn" class="settings-btn" aria-label="Game settings" title="Game settings">
+                    <i class="fas fa-cog" aria-hidden="true"></i>
+                </button>
+            </div>
+        </header>
+        
+        <div class="score-container">
+            <div class="score-item">
+                <span class="score-label">Score:</span>
+                <span id="score" aria-live="polite">0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">High Score:</span>
+                <span id="highScore" aria-live="polite">0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">Level:</span>
+                <span id="level" aria-live="polite">1</span>
+            </div>
+        </div>
+        
+        <div class="game-area">
+            <canvas id="gameCanvas" width="400" height="400" 
+                    role="img" 
+                    aria-label="Snake game playing field"
+                    tabindex="0"></canvas>
+            <div id="gameOverlay" class="game-overlay" aria-hidden="true">
+                <div class="overlay-content">
+                    <h2 id="overlayTitle">Game Over!</h2>
+                    <p id="overlayMessage">Your score: <span id="finalScore">0</span></p>
+                    <button id="playAgainBtn" class="overlay-btn">Play Again</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="startBtn" class="control-btn primary">Start Game</button>
+            <button id="pauseBtn" class="control-btn secondary" disabled>Pause</button>
+            <button id="resetBtn" class="control-btn secondary" disabled>Reset Game</button>
+        </div>
+        
+        <!-- Touch Controls for Mobile -->
+        <div class="touch-controls" aria-label="Touch controls for mobile devices">
+            <div class="touch-row">
+                <button class="touch-btn" data-direction="up" aria-label="Move snake up">
+                    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="touch-row">
+                <button class="touch-btn" data-direction="left" aria-label="Move snake left">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button class="touch-btn" data-direction="down" aria-label="Move snake down">
+                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <button class="touch-btn" data-direction="right" aria-label="Move snake right">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h2>How to Play</h2>
+            <div class="instruction-content">
+                <div class="instruction-section">
+                    <h3><i class="fas fa-keyboard" aria-hidden="true"></i> Desktop Controls</h3>
+                    <ul>
+                        <li><kbd>↑</kbd> - Move Up</li>
+                        <li><kbd>↓</kbd> - Move Down</li>
+                        <li><kbd>←</kbd> - Move Left</li>
+                        <li><kbd>→</kbd> - Move Right</li>
+                        <li><kbd>Space</kbd> - Pause/Resume</li>
+                    </ul>
+                </div>
+                <div class="instruction-section">
+                    <h3><i class="fas fa-mobile-alt" aria-hidden="true"></i> Mobile Controls</h3>
+                    <p>Swipe in any direction or use the touch buttons below the game.</p>
+                </div>
+            </div>
+            <p class="game-objective">Eat the food to grow longer and increase your score! Avoid hitting the walls or yourself!</p>
+        </div>
+        
+        <!-- Settings Modal -->
+        <div id="settingsModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="settingsTitle">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="settingsTitle">Game Settings</h2>
+                    <button id="closeSettings" class="close-btn" aria-label="Close settings">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="setting-group">
+                        <label for="difficulty">Difficulty:</label>
+                        <select id="difficulty">
+                            <option value="easy">Easy</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label for="gridSize">Grid Size:</label>
+                        <select id="gridSize">
+                            <option value="small">Small (15x15)</option>
+                            <option value="medium" selected>Medium (20x20)</option>
+                            <option value="large">Large (25x25)</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label>
+                            <input type="checkbox" id="soundEnabled" checked>
+                            Enable Sound Effects
+                        </label>
+                    </div>
+                    <div class="setting-group">
+                        <label>
+                            <input type="checkbox" id="vibrationEnabled">
+                            Enable Vibration (Mobile)
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="saveSettings" class="control-btn primary">Save Settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Screen Reader Announcements -->
+    <div id="announcements" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

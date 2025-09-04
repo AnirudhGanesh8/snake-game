@@ -1,0 +1,27 @@
+{
+  "name": "Snake Game",
+  "short_name": "Snake",
+  "description": "A responsive Snake Game with touch controls and accessibility features",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#1a472a",
+  "theme_color": "#1a472a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiMxYTQ3MmEiLz4KPHN2ZyB4PSI0OCIgeT0iNDgiIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDk2IDk2IiBmaWxsPSJub25lIj4KPHJlY3QgeD0iMTYiIHk9IjE2IiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSI4IiBmaWxsPSIjM2E3MDRkIi8+CjxyZWN0IHg9IjI0IiB5PSIyNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iNCIgZmlsbD0iIzRjYWY1MCIvPgo8cmVjdCB4PSI0NCIgeT0iMjQiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcng9IjQiIGZpbGw9IiM0Y2FmNTAiLz4KPHJlY3QgeD0iNjQiIHk9IjI0IiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHJ4PSI0IiBmaWxsPSIjNGNhZjUwIi8+CjxjaXJjbGUgY3g9IjQ4IiBjeT0iNDgiIHI9IjEyIiBmaWxsPSIjZTc0YzNjIi8+CjxjaXJjbGUgY3g9IjQ4IiBjeT0iNDgiIHI9IjgiIGZpbGw9IiNmOGQ3ZGEiLz4KPHN2ZyB4PSI0NCIgeT0iNDAiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cGF0aCBkPSJNIDQgMCA0IDggNCA0IDggNCIgZmlsbD0iIzc5NTU0OCIvPgo8L3N2Zz4KPC9zdmc+Cjwvc3ZnPgo=",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iNjQiIGZpbGw9IiMxYTQ3MmEiLz4KPHN2ZyB4PSIxMjgiIHk9IjEyOCIgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiBmaWxsPSJub25lIj4KPHJlY3QgeD0iNDIiIHk9IjQyIiB3aWR0aD0iMTcyIiBoZWlnaHQ9IjE3MiIgcng9IjIxIiBmaWxsPSIjM2E3MDRkIi8+CjxyZWN0IHg9IjY0IiB5PSI2NCIgd2lkdGg9IjQyIiBoZWlnaHQ9IjQyIiByeD0iMTAiIGZpbGw9IiM0Y2FmNTAiLz4KPHJlY3QgeD0iMTE4IiB5PSI2NCIgd2lkdGg9IjQyIiBoZWlnaHQ9IjQyIiByeD0iMTAiIGZpbGw9IiM0Y2FmNTAiLz4KPHJlY3QgeD0iMTcyIiB5PSI2NCIgd2lkdGg9IjQyIiBoZWlnaHQ9IjQyIiByeD0iMTAiIGZpbGw9IiM0Y2FmNTAiLz4KPGNpcmNsZSBjeD0iMTI4IiBjeT0iMTI4IiByPSIzMiIgZmlsbD0iI2U3NGMzYyIvPgo8Y2lyY2xlIGN4PSIxMjgiIGN5PSIxMjgiIHI9IjIxIiBmaWxsPSIjZjhkN2RhIi8+CjxzdmcgeD0iMTE4IiB5PSIxMDYiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CjxwYXRoIGQ9Ik0gMTAgMCAxMCAyMCAxMCAxMCAyMCAxMCIgZmlsbD0iIzc5NTU0OCIvPgo8L3N2Zz4KPC9zdmc+Cjwvc3ZnPgo=",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["games", "entertainment"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "./",
+  "prefer_related_applications": false
+}
